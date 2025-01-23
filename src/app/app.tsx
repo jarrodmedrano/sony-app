@@ -2,7 +2,7 @@ function App() {
   return (
     <main>
       <div className="flex items-center justify-center min-h-screen">
-        <div className="main-thing">
+        <div className="main-thing md:w-full">
           <div className="slideshow">
             <div className="shadow-bg">
               <div className="shadow-div"></div>
@@ -16,10 +16,10 @@ function App() {
             <div className="container">
               <div className="main-content">
                 <div className="content">
-                  <p className="text-left uppercase more-from">
+                  <p className="text-left uppercase more-from sm:w-20 md:w-60">
                     More from Rico the Dog
                   </p>
-                  <a href="https://sonyplaystation.com" target="_blank">
+                  <a href="https://playstation.com" target="_blank">
                     <button
                       type="button"
                       className="border border-white text-white py-1 rounded-full uppercase rounded-accent"
@@ -32,17 +32,20 @@ function App() {
                   </h1>
 
                   <p className="paragraph font-semibold">
-                    Charge into a brand-new supersized adventure with Rico
-                    across 50 exciting and diverse worlds, available now on PS5!
+                    Charge into a brand-new supersized adventure with{" "}
+                    <span className="uppercase">Rico</span> across 50 exciting
+                    and diverse worlds, available now on PS5!
                   </p>
-                  <button className="bg-white text-black px-5 py-3 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
-                    Learn More
-                  </button>
+                  <a href="https://playstation.com" target="_blank">
+                    <button className="bg-white text-black px-5 py-3 md:py-4 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
+                      Learn More
+                    </button>
+                  </a>
                 </div>
               </div>
 
               <div className="thumbnails">
-                <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
+                <ul className="grid grid-cols-3 gap-x-3 gap-y-2 md:grid-cols-6">
                   <li>
                     <button className="rounded">
                       <img src="/assets/1-thumbnail.png" className="rounded" />
