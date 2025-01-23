@@ -1,10 +1,75 @@
-import Button from "components/button";
-
 function App() {
   return (
     <main>
-      Sony
-      <Button>Click me</Button>
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="slideshow">
+          <div className="main-content">
+            <div className="content">
+              <p className="text-left uppercase more-from">
+                More from Rico the Dog
+              </p>
+              <a href="https://sonyplaystation.com" target="_blank">
+                <button
+                  type="button"
+                  className="border border-white text-white py-1 rounded-full uppercase rounded-accent"
+                >
+                  Rico is Back!
+                </button>
+              </a>
+              <h1 className="font-bolder text-white text-3xl mb-8 uppercase main-title">
+                Ricobot
+              </h1>
+              <img
+                className="cutout"
+                src="./assets/1-foreground-cutout.png"
+                alt="ricobot"
+              />
+              <p className="paragraph">
+                Charge into a brand-new supersized adventure with Rico across 50
+                exciting and diverse worlds, available now on PS5!
+              </p>
+              <button className="bg-white text-black px-6 py-3 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <div className="thumbnails">
+            <ul className="grid grid-cols-3 gap-4">
+              <li>
+                <a href="#">
+                  <img src="/assets/1-thumbnail.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/2-thumbnail.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/3-thumbnail.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/4-thumbnail.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/5-thumbnail.png" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/6-thumbnail.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
