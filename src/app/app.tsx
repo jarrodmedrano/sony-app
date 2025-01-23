@@ -24,47 +24,47 @@ function App() {
                 src="./assets/1-foreground-cutout.png"
                 alt="ricobot"
               />
-              <p className="paragraph">
+              <p className="paragraph font-semibold">
                 Charge into a brand-new supersized adventure with Rico across 50
                 exciting and diverse worlds, available now on PS5!
               </p>
-              <button className="bg-white text-black px-6 py-3 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
+              <button className="bg-white text-black px-5 py-3 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
                 Learn More
               </button>
             </div>
           </div>
 
           <div className="thumbnails">
-            <ul className="grid grid-cols-3 gap-4">
+            <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
               <li>
-                <a href="#">
-                  <img src="/assets/1-thumbnail.png" />
-                </a>
+                <button className="rounded">
+                  <img src="/assets/1-thumbnail.png" className="rounded" />
+                </button>
               </li>
               <li>
-                <a href="#">
-                  <img src="/assets/2-thumbnail.png" />
-                </a>
+                <button className="rounded">
+                  <img src="/assets/2-thumbnail.png" className="rounded" />
+                </button>
               </li>
               <li>
-                <a href="#">
-                  <img src="/assets/3-thumbnail.png" />
-                </a>
+                <button className="rounded">
+                  <img src="/assets/3-thumbnail.png" className="rounded" />
+                </button>
               </li>
               <li>
-                <a href="#">
-                  <img src="/assets/4-thumbnail.png" />
-                </a>
+                <button className="rounded">
+                  <img src="/assets/4-thumbnail.png" className="rounded" />
+                </button>
               </li>
               <li>
-                <a href="#">
-                  <img src="/assets/5-thumbnail.png" />
-                </a>
+                <button className="rounded">
+                  <img src="/assets/5-thumbnail.png" className="rounded" />
+                </button>
               </li>
               <li>
-                <a href="#">
-                  <img src="/assets/6-thumbnail.png" />
-                </a>
+                <button className="rounded">
+                  <img src="/assets/6-thumbnail.png" className="rounded" />
+                </button>
               </li>
             </ul>
           </div>

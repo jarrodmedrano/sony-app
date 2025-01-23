@@ -45,6 +45,7 @@
     overflow: visible;
     padding: 0 26px;
     background: black;
+    padding-bottom: 90px;
   }
 
   .main-content {
@@ -73,19 +74,20 @@
     margin-top: 24px;
   }
 
-  .rounded-accent {
+  button.rounded-accent {
     font-size: 12px;
     font-weight: 800;
     margin-bottom: 14px;
     letter-spacing: 0.35px;
     padding: 4px 9px;
+    border-width: 2px;
   }
 
   h1.main-title {
     font-size: 35px;
     font-weight: 900;
     letter-spacing: 0.75px;
-    margin-bottom: 27px;
+    margin-bottom: 15px;
     line-height: 1;
   }
 
@@ -95,8 +97,12 @@
     margin-bottom: 32px;
   }
 
-  .cta {
+  button.cta {
     font-size: 14px;
     font-weight: 900;
+    letter-spacing: 1.25px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-bottom: 50px;
   }
 }
