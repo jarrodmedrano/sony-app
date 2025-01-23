@@ -44,30 +44,20 @@
     }
   }
 
+  .main-thing {
+    background: black;
+    margin-top: 50px;
+  }
+
   .slideshow {
     position: relative;
     overflow: visible;
-    padding: 0 26px;
-    background: black;
     padding-bottom: 90px;
-  }
-
-  .main-content {
-    z-index: 1;
   }
 
   .content {
     position: relative;
     z-index: 1;
-  }
-
-  .cutout {
-    position: absolute;
-    right: 0;
-    top: -50px;
-    right: -20px;
-    z-index: 0;
-    max-width: 40%;
   }
 
   .more-from {
@@ -120,12 +110,15 @@
 - `rgba(0, 0, 0, 0) 75%`
 - `#000000 100%` */
 
-.shadow {
+.shadow-bg {
   width: 100%;
   height: 25vh;
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
+  padding-top: 50px;
+  background: white;
 }
 
 .shadow-div {
@@ -135,15 +128,15 @@
       #000000 72.92%,
       #09101a 100%
     ),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, #000000 100%);
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, #000000 80%);
   position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
   height: 25vh;
+  z-index: 1;
 }
 
-.shadow .bg {
+.shadow-bg .bg {
   background-image: url("/assets/1-background.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -152,8 +145,16 @@
 }
 
 .container {
-  z-index: 1;
   position: relative;
+  padding: 50px 26px 0;
+}
+
+.cutout {
+  position: absolute;
+  right: 0;
+  top: 0;
+  right: 20px;
+  max-width: 40%;
 }
 
 /* @media (min-width: 768px) {
