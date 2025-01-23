@@ -46,7 +46,7 @@ function App() {
 
               <div className="thumbnails">
                 <ul className="grid grid-cols-3 gap-x-3 gap-y-2 md:grid-cols-6">
-                  <li>
+                  <li className="active">
                     <button className="rounded">
                       <img src="/assets/1-thumbnail.png" className="rounded" />
                     </button>

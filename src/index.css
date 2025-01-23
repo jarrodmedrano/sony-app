@@ -126,22 +126,33 @@
     max-width: 40%;
   }
 
+  .thumbnails {
+    z-index: 1;
+    position: relative;
+  }
+
   @media (min-width: 640px) {
     .main-thing {
       width: 100%;
+      height: 100%;
     }
   }
 
   @media (min-width: 768px) {
+    .shadow-bg {
+      padding-top: 90px;
+    }
+
     .container {
       position: relative;
-      padding: 105px 80px 0;
+      padding: 90px 80px 0;
     }
 
     .more-from {
       font-size: 31px;
       font-weight: 900;
       margin-bottom: 75px;
+      margin-top: 80px;
     }
 
     button.rounded-accent {
@@ -167,7 +178,15 @@
     }
 
     .cutout {
-      max-width: 50%;
+      max-width: 40%;
+    }
+
+    .thumbnails {
+      margin-top: 40px;
+    }
+
+    .thumbnails .active img {
+      height: 144px;
     }
 
     .thumbnails img {
@@ -179,7 +198,13 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: flex-start;
+      align-items: flex-end;
       column-gap: 36px;
+    }
+
+    .shadow-bg,
+    .shadow-div {
+      height: 100%;
     }
   }
 }
