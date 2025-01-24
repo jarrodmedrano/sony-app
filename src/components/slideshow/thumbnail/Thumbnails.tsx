@@ -12,7 +12,7 @@ function Thumbnails({
   activeId: number;
 }) {
   const handleClick = (event: React.MouseEvent) => {
-    event.preventDefault();
+    event.stopPropagation();
     handleThumbClick(index);
   };
   return (
