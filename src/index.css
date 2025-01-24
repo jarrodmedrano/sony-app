@@ -18,7 +18,7 @@
     margin-top: 50px;
   }
 
-  .slideshow {
+  .slideshow-banner {
     position: relative;
     overflow: visible;
     padding-bottom: 90px;
@@ -70,7 +70,7 @@
     margin-bottom: 50px;
   }
 
-  .shadow-bg {
+  .slideshow-banner__gradient-wrap {
     width: 100%;
     height: 25vh;
     position: absolute;
@@ -81,7 +81,7 @@
     background: white;
   }
 
-  .shadow-div {
+  .slideshow-banner__gradient {
     background: linear-gradient(
         to left,
         rgba(37, 45, 55, 0) 40%,
@@ -96,8 +96,7 @@
     z-index: 1;
   }
 
-  .shadow-bg .bg {
-    background-image: url("/assets/1-background.png");
+  .slideshow-banner__gradient-wrap .slideshow-banner__bgimage {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -117,7 +116,7 @@
     max-width: 40%;
   }
 
-  .thumbnails {
+  .slideshow-banner__thumbnails {
     z-index: 1;
     position: relative;
   }
@@ -130,7 +129,7 @@
   }
 
   @media (min-width: 768px) {
-    .shadow-bg {
+    .slideshow-banner__gradient {
       padding-top: 90px;
     }
 
@@ -172,19 +171,19 @@
       max-width: 40%;
     }
 
-    .thumbnails {
+    .slideshow-banner__thumbnails {
       margin-top: 40px;
     }
 
-    .thumbnails .active img {
+    .slideshow-banner__thumbnails .active img {
       height: 144px;
     }
 
-    .thumbnails img {
+    .slideshow-banner__thumbnails img {
       height: 95px;
     }
 
-    .thumbnails .grid {
+    .slideshow-banner__thumbnails .grid {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -193,8 +192,8 @@
       column-gap: 36px;
     }
 
-    .shadow-bg,
-    .shadow-div {
+    .slideshow-banner__gradient,
+    .slideshow-banner__gradient-wrap {
       height: 100%;
     }
   }

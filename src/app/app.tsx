@@ -1,4 +1,4 @@
-import Slideshow from "components/slideshow/slideshow";
+import Slideshow from "components/slideshow/Slideshow";
 
 function App() {
   return (

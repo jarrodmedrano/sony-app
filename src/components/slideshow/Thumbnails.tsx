@@ -9,9 +9,13 @@ function Thumbnails({
   src: string;
   activeId: number;
 }) {
+  const handleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    handleThumbClick(index);
+  };
   return (
     <li className={activeId === index ? "active" : ""}>
-      <button className="rounded" onClick={() => handleThumbClick(index)}>
+      <button className="rounded" onClick={handleClick}>
         <img src={src} className="rounded" />
       </button>
     </li>

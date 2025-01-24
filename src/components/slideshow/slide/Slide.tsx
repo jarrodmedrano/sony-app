@@ -5,7 +5,7 @@ import SlideImage from "./SlideImage";
 function Slide({ slide }: { slide: SlideProps }) {
   const { bg, popout } = slide;
   return (
-    <div className="slide">
+    <div className="slideshow-banner__slide">
       <SlideImage bg={bg} popout={popout} />
       <div className="container">
         <SlideContent {...slide} />
