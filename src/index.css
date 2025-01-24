@@ -6,8 +6,205 @@
   html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    font-family: "Raleway", serif;
   }
 
   main {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .wrapper-main {
+    background: black;
+    margin-top: 50px;
+  }
+
+  .slideshow {
+    position: relative;
+    overflow: visible;
+    padding-bottom: 90px;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .more-from {
+    font-size: 17px;
+    font-weight: 900;
+    max-width: 50%;
+    line-height: 1;
+    margin-bottom: 85px;
+    margin-top: 24px;
+  }
+
+  button.rounded-accent {
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    letter-spacing: 0.35px;
+    padding: 4px 9px;
+    border-width: 2px;
+  }
+
+  h1.main-title {
+    font-size: 35px;
+    font-weight: 900;
+    letter-spacing: 0.75px;
+    margin-bottom: 15px;
+    line-height: 1;
+  }
+
+  .paragraph {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  button.cta {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.25px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-bottom: 50px;
+  }
+
+  /* ### Desktop gradient: Left to Right
+- `rgba(37, 45, 55, 0) 40%`
+- `#000000 72.92%`
+- `#09101A 100%`
+
+### Desktop gradient: Top to Bottom
+- `rgba(0, 0, 0, 0) 75%`
+- `#000000 100%` */
+
+  .shadow-bg {
+    width: 100%;
+    height: 25vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 50px;
+    background: white;
+  }
+
+  .shadow-div {
+    background: linear-gradient(
+        to left,
+        rgba(37, 45, 55, 0) 40%,
+        #000000 72.92%,
+        #09101a 100%
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, #000000 80%);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    z-index: 1;
+  }
+
+  .shadow-bg .bg {
+    background-image: url("/assets/1-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }
+
+  .container {
+    position: relative;
+    padding: 50px 26px 0;
+  }
+
+  .cutout {
+    position: absolute;
+    right: 0;
+    top: 0;
+    right: 20px;
+    max-width: 40%;
+  }
+
+  .thumbnails {
+    z-index: 1;
+    position: relative;
+  }
+
+  @media (min-width: 640px) {
+    .wrapper-main {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .shadow-bg {
+      padding-top: 90px;
+    }
+
+    .container {
+      position: relative;
+      padding: 90px 80px 0;
+    }
+
+    .more-from {
+      font-size: 31px;
+      font-weight: 900;
+      margin-bottom: 75px;
+      margin-top: 80px;
+    }
+
+    button.rounded-accent {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1.main-title {
+      font-size: 49px;
+      font-weight: 900;
+    }
+
+    .paragraph {
+      font-size: 16px;
+      font-weight: 500;
+      width: 500px;
+    }
+
+    button.cta {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .cutout {
+      max-width: 40%;
+    }
+
+    .thumbnails {
+      margin-top: 40px;
+    }
+
+    .thumbnails .active img {
+      height: 144px;
+    }
+
+    .thumbnails img {
+      height: 95px;
+    }
+
+    .thumbnails .grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+      column-gap: 36px;
+    }
+
+    .shadow-bg,
+    .shadow-div {
+      height: 100%;
+    }
   }
 }
