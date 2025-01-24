@@ -208,4 +208,8 @@ button.cta {
   .slideshow-banner__thumbnails .grid {
     column-gap: 36px;
   }
+
+  .slideshow-banner__gradient-wrap .slideshow-banner__bgimage {
+    background-position: center;
+  }
 }
