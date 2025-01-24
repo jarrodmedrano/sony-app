@@ -1,39 +1,20 @@
-function Thumbnails() {
+function Thumbnails({
+  handleThumbClick,
+  index,
+  src,
+  activeId,
+}: {
+  handleThumbClick: (index: number) => void;
+  index: number;
+  src: string;
+  activeId: number;
+}) {
   return (
-    <div className="thumbnails">
-      <ul className="grid grid-cols-3 gap-x-3 gap-y-2 md:grid-cols-6">
-        <li className="active">
-          <button className="rounded">
-            <img src="/assets/1-thumbnail.png" className="rounded" />
-          </button>
-        </li>
-        <li>
-          <button className="rounded">
-            <img src="/assets/2-thumbnail.png" className="rounded" />
-          </button>
-        </li>
-        <li>
-          <button className="rounded">
-            <img src="/assets/3-thumbnail.png" className="rounded" />
-          </button>
-        </li>
-        <li>
-          <button className="rounded">
-            <img src="/assets/4-thumbnail.png" className="rounded" />
-          </button>
-        </li>
-        <li>
-          <button className="rounded">
-            <img src="/assets/5-thumbnail.png" className="rounded" />
-          </button>
-        </li>
-        <li>
-          <button className="rounded">
-            <img src="/assets/6-thumbnail.png" className="rounded" />
-          </button>
-        </li>
-      </ul>
-    </div>
+    <li className={activeId === index ? "active" : ""}>
+      <button className="rounded" onClick={() => handleThumbClick(index)}>
+        <img src={src} className="rounded" />
+      </button>
+    </li>
   );
 }
 
