@@ -16,7 +16,11 @@ function Thumbnails({
     handleThumbClick(index);
   };
   return (
-    <li className={activeId === index ? "active" : ""}>
+    <li
+      className={
+        activeId === index ? "slideshow-banner__thumbnails--active" : ""
+      }
+    >
       <button className="" onClick={handleClick}>
         <img src={src} className="rounded" />
       </button>

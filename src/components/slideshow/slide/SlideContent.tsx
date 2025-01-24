@@ -18,7 +18,7 @@ function SlideContent(props: SlideProps) {
           {title}
         </h1>
 
-        <p className="paragraph font-semibold">{description}</p>
+        <p className="paragraph font-semibold sm:w-3/4">{description}</p>
         <a href={url} target="_blank">
           <button className="bg-white text-black px-5 py-3 md:py-4 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
             {cta}

@@ -16,12 +16,12 @@ function Slideshow() {
   };
 
   useEffect(() => {
-    // setSlide(slides[activeId]);
-    // setPreloadSlide(slides[(activeId + 1) % slides.length].bg);
-    // const interval = setInterval(() => {
-    //   setActiveId((activeId + 1) % slides.length);
-    // }, 5000);
-    // return () => clearInterval(interval);
+    setSlide(slides[activeId]);
+    setPreloadSlide(slides[(activeId + 1) % slides.length].bg);
+    const interval = setInterval(() => {
+      setActiveId((activeId + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, [activeId]);
 
   return (
@@ -30,7 +30,7 @@ function Slideshow() {
       <link rel="preload" href={preloadSlide} as="image" />
       <div className="container">
         <div className="slideshow-banner__thumbnails">
-          <ul className="grid grid-cols-3 gap-x-3 gap-y-2 md:grid-cols-6">
+          <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
             {slides?.map((slide: SlideProps, index) => {
               const { id, thumbnail } = slide;
               return (

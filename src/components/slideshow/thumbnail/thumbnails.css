@@ -1,4 +1,4 @@
-.active button:before {
+.slideshow-banner__thumbnails--active button:before {
   background: linear-gradient(-130deg, #fff, #000 40%, #fff) border-box;
   border-radius: 10px;
   border: 2px solid transparent;
@@ -15,16 +15,12 @@
   pointer-events: none;
 }
 
-.active button {
+.slideshow-banner__thumbnails--active button {
   position: relative;
 }
 
-.slideshow-banner__thumbnails img {
-  height: 90px;
-}
-
 @media (min-width: 768px) {
-  .slideshow-banner__thumbnails .active img {
+  .slideshow-banner__thumbnails .slideshow-banner__thumbnails--active img {
     height: 144px;
   }
 
@@ -32,12 +28,12 @@
     height: 95px;
   }
 
-  .active button {
+  .slideshow-banner__thumbnails--active button {
     padding: 16px;
     position: relative;
   }
 
-  .active button:before {
+  .slideshow-banner__thumbnails--active button:before {
     border-radius: 12px;
     border: 4px solid transparent;
     left: 0;
