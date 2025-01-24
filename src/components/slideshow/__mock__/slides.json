@@ -7,64 +7,64 @@
     "description": "Charge into a brand-new supersized adventure with RICO across 50 exciting and diverse worlds, available now on PS5!",
     "cta": "Learn More",
     "url": "https://playstation.com",
-    "bg": "./assets/1-background.png",
-    "popout": "./assets/1-foreground-cutout.png",
+    "bg": "./assets/1-background.webp",
+    "popout": "./assets/1-foreground-cutout.webp",
     "popoutAlt": "ricobot",
-    "thumbnail": "./assets/1-thumbnail.png"
+    "thumbnail": "./assets/1-thumbnail.webp"
   },
   {
     "id": "46",
     "subtitle": "More from Rico the Dog",
     "button": "Rico is Back!",
-    "title": "Ricobot",
+    "title": "Ricobot Sleeps",
     "description": "Charge into a brand-new supersized adventure with RICO across 50 exciting and diverse worlds, available now on PS5!",
     "cta": "Learn More",
     "url": "https://playstation.com",
-    "bg": "./assets/2-background.png",
-    "thumbnail": "./assets/2-thumbnail.png"
+    "bg": "./assets/2-background.webp",
+    "thumbnail": "./assets/2-thumbnail.webp"
   },
   {
     "id": "47",
     "subtitle": "More from Rico the Dog",
     "button": "Rico is Back!",
-    "title": "Ricobot",
+    "title": "Ricobot Snow",
     "description": "Charge into a brand-new supersized adventure with RICO across 50 exciting and diverse worlds, available now on PS5!",
     "cta": "Learn More",
     "url": "https://playstation.com",
-    "bg": "./assets/3-background.png",
-    "thumbnail": "./assets/3-thumbnail.png"
+    "bg": "./assets/3-background.webp",
+    "thumbnail": "./assets/3-thumbnail.webp"
   },
   {
     "id": "48",
     "subtitle": "More from Rico the Dog",
     "button": "Rico is Back!",
-    "title": "Ricobot",
+    "title": "Ricobot Jumps",
     "description": "Charge into a brand-new supersized adventure with RICO across 50 exciting and diverse worlds, available now on PS5!",
     "cta": "Learn More",
     "url": "https://playstation.com",
-    "bg": "./assets/4-background.png",
-    "thumbnail": "./assets/4-thumbnail.png"
+    "bg": "./assets/4-background.webp",
+    "thumbnail": "./assets/4-thumbnail.webp"
   },
   {
     "id": "49",
     "subtitle": "More from Rico the Dog",
     "button": "Rico is Back!",
-    "title": "Ricobot",
+    "title": "Ricobot BDay",
     "description": "Charge into a brand-new supersized adventure with RICO across 50 exciting and diverse worlds, available now on PS5!",
     "cta": "Learn More",
     "url": "https://playstation.com",
-    "bg": "./assets/5-background.png",
-    "thumbnail": "./assets/5-thumbnail.png"
+    "bg": "./assets/5-background.webp",
+    "thumbnail": "./assets/5-thumbnail.webp"
   },
   {
     "id": "50",
     "subtitle": "More from Rico the Dog",
     "button": "Rico is Back!",
-    "title": "Ricobot",
+    "title": "Ricobot walks",
     "description": "Charge into a brand-new supersized adventure with RICO across 50 exciting and diverse worlds, available now on PS5!",
     "cta": "Learn More",
     "url": "https://playstation.com",
-    "bg": "./assets/6-background.png",
-    "thumbnail": "./assets/6-thumbnail.png"
+    "bg": "./assets/6-background.webp",
+    "thumbnail": "./assets/6-thumbnail.webp"
   }
 ]
