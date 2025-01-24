@@ -52,7 +52,6 @@ button.cta {
 
 .slideshow-banner__gradient-wrap {
   width: 100%;
-  height: 250px;
   position: absolute;
   top: 0;
   left: 0;
@@ -61,6 +60,7 @@ button.cta {
   background: white;
 }
 
+.slideshow-banner__gradient-wrap,
 .slideshow-banner__gradient,
 .slideshow-banner__bgwrap {
   height: 250px;
@@ -99,12 +99,14 @@ button.cta {
 }
 
 @media (min-width: 360px) {
-  .slideshow-banner__gradient-wrap {
-    height: 300px;
+  .slideshow-banner__gradient-wrap,
+  .slideshow-banner__gradient,
+  .slideshow-banner__bgwrap {
+    height: 500px;
   }
 
   .slideshow-banner__gradient-wrap .slideshow-banner__bgimage {
-    margin-top: -50px;
+    /* margin-top: -50px; */
   }
 }
 
@@ -121,9 +123,8 @@ button.cta {
 
 .cutout {
   position: absolute;
-  right: 0;
   top: 0;
-  right: 20px;
+  left: 50%;
   max-width: 40%;
 }
 
@@ -148,7 +149,7 @@ button.cta {
     padding-top: 90px;
   }
 
-  .container {
+  .slideshow-banner__slide .container {
     position: relative;
     padding: 90px 80px 0;
   }
@@ -183,7 +184,9 @@ button.cta {
   }
 
   .cutout {
+    top: 0;
     max-width: 40%;
+    width: 630px;
   }
 
   .slideshow-banner__thumbnails {
@@ -198,9 +201,14 @@ button.cta {
     align-items: flex-end;
   }
 
+  .slideshow-banner__gradient-wrap,
   .slideshow-banner__gradient,
-  .slideshow-banner__gradient-wrap {
+  .slideshow-banner__bgwrap {
     height: 100%;
+  }
+
+  .slideshow-banner__gradient-wrap {
+    padding-top: 90px;
   }
 }
 
@@ -211,5 +219,11 @@ button.cta {
 
   .slideshow-banner__gradient-wrap .slideshow-banner__bgimage {
     background-position: center;
+  }
+}
+
+@media (min-width: 940px) {
+  .slideshow-banner > .container {
+    padding-left: 80px;
   }
 }
