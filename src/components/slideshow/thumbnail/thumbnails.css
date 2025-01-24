@@ -19,7 +19,16 @@
   position: relative;
 }
 
+.slideshow-banner__thumbnails .slideshow-banner__thumbnails--active img {
+  transition: height 0.3s ease-in-out;
+}
+
 @media (min-width: 768px) {
+  .slideshow-banner__thumbnails .slideshow-banner__thumbnails--active {
+    height: 144px;
+    transform: translateY(-33px);
+  }
+
   .slideshow-banner__thumbnails .slideshow-banner__thumbnails--active img {
     height: 144px;
   }

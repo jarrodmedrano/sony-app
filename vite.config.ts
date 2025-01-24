@@ -1,16 +1,10 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import react from "@vitejs/plugin-react";
-import VitePluginWebpAndPath from "vite-plugin-webp-and-path";
 
 export default defineConfig(() => {
   return {
-    plugins: [
-      VitePluginWebpAndPath({
-        textExtensions: "html,css,js,jsx,ts,tsx,json",
-      }),
-      react(),
-    ],
+    plugins: [react()],
     server: {
       port: 3000,
     },
