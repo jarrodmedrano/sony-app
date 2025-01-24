@@ -28,6 +28,10 @@
     height: 95px;
   }
 
+  .slideshow-banner__thumbnails--active {
+    margin-bottom: 6px;
+  }
+
   .slideshow-banner__thumbnails--active button {
     padding: 16px;
     position: relative;

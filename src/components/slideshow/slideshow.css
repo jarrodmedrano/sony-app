@@ -168,11 +168,16 @@ button.cta {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-end;
-    column-gap: 36px;
   }
 
   .slideshow-banner__gradient,
   .slideshow-banner__gradient-wrap {
     height: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .slideshow-banner__thumbnails .grid {
+    column-gap: 36px;
   }
 }
