@@ -1,4 +1,12 @@
-function SlideImage({ bg, popout }: { bg: string; popout?: string }) {
+function SlideImage({
+  bg,
+  popout,
+  popoutAlt,
+}: {
+  bg: string;
+  popout?: string;
+  popoutAlt?: string;
+}) {
   return (
     <div className="slideshow-banner__gradient-wrap">
       <div className="slideshow-banner__gradient"></div>
@@ -6,7 +14,7 @@ function SlideImage({ bg, popout }: { bg: string; popout?: string }) {
         className="slideshow-banner__bgimage"
         style={{ backgroundImage: `url(${bg})` }}
       ></div>
-      {popout ? <img className="cutout" src={popout} alt="ricobot" /> : null}
+      {popout ? <img className="cutout" src={popout} alt={popoutAlt} /> : null}
     </div>
   );
 }

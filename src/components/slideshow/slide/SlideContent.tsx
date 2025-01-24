@@ -1,13 +1,11 @@
-import { SlideProps } from "../Slideshow";
+import { SlideProps } from "../types";
 
 function SlideContent(props: SlideProps) {
   const { button, cta, description, subtitle, title, url } = props;
   return (
     <div className="slideshow-banner__wrapper">
       <div className="content">
-        <p className="text-left uppercase more-from sm:w-20 md:w-60">
-          {subtitle}
-        </p>
+        <p className="text-left uppercase more-from w-32 md:w-60">{subtitle}</p>
         <a href={url} target="_blank">
           <button
             type="button"
@@ -20,7 +18,7 @@ function SlideContent(props: SlideProps) {
           {title}
         </h1>
 
-        <p className="paragraph font-semibold">{description}</p>
+        <p className="paragraph font-semibold sm:w-3/4">{description}</p>
         <a href={url} target="_blank">
           <button className="bg-white text-black px-5 py-3 md:py-4 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
             {cta}

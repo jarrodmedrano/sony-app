@@ -9,6 +9,7 @@
     "url": "https://playstation.com",
     "bg": "./assets/1-background.png",
     "popout": "./assets/1-foreground-cutout.png",
+    "popoutAlt": "ricobot",
     "thumbnail": "./assets/1-thumbnail.png"
   },
   {
