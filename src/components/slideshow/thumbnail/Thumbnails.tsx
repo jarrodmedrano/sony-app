@@ -1,3 +1,5 @@
+import "./thumbnails.css";
+
 function Thumbnails({
   handleThumbClick,
   index,
@@ -15,7 +17,7 @@ function Thumbnails({
   };
   return (
     <li className={activeId === index ? "active" : ""}>
-      <button className="rounded" onClick={handleClick}>
+      <button className="" onClick={handleClick}>
         <img src={src} className="rounded" />
       </button>
     </li>

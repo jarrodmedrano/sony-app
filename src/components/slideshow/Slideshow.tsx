@@ -1,21 +1,9 @@
 import Slide from "./slide/Slide";
-import Thumbnails from "./Thumbnails";
+import Thumbnails from "./thumbnail/Thumbnails";
 import slides from "./__mock__/slides.json";
 import { useEffect, useState } from "react";
-
-export interface SlideProps {
-  id: string;
-  url: string;
-  title: string;
-  description: string;
-  cta: string;
-  subtitle: string;
-  button: string;
-  bg: string;
-  thumbnail: string;
-  popout?: string;
-  popoutAlt?: string;
-}
+import "./slideshow.css";
+import { SlideProps } from "./types";
 
 function Slideshow() {
   const [activeId, setActiveId] = useState(0);
@@ -28,12 +16,12 @@ function Slideshow() {
   };
 
   useEffect(() => {
-    setSlide(slides[activeId]);
-    setPreloadSlide(slides[(activeId + 1) % slides.length].bg);
-    const interval = setInterval(() => {
-      setActiveId((activeId + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    // setSlide(slides[activeId]);
+    // setPreloadSlide(slides[(activeId + 1) % slides.length].bg);
+    // const interval = setInterval(() => {
+    //   setActiveId((activeId + 1) % slides.length);
+    // }, 5000);
+    // return () => clearInterval(interval);
   }, [activeId]);
 
   return (

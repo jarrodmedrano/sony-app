@@ -1,4 +1,4 @@
-import { SlideProps } from "../Slideshow";
+import { SlideProps } from "../types";
 
 function SlideContent(props: SlideProps) {
   const { button, cta, description, subtitle, title, url } = props;

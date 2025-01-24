@@ -1,4 +1,4 @@
-import { SlideProps } from "../Slideshow";
+import { SlideProps } from "../types";
 import SlideContent from "./SlideContent";
 import SlideImage from "./SlideImage";
 
