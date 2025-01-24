@@ -27,7 +27,9 @@ function Slideshow() {
   return (
     <div className="slideshow-banner">
       <Slide slide={slide} />
-      <link rel="preload" href={preloadSlide} as="image" />
+      {preloadSlide ? (
+        <link rel="preload" href={preloadSlide} as="image" />
+      ) : null}
       <div className="container">
         <div className="slideshow-banner__thumbnails">
           <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
