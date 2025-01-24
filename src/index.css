@@ -70,15 +70,6 @@
     margin-bottom: 50px;
   }
 
-  /* ### Desktop gradient: Left to Right
-- `rgba(37, 45, 55, 0) 40%`
-- `#000000 72.92%`
-- `#09101A 100%`
-
-### Desktop gradient: Top to Bottom
-- `rgba(0, 0, 0, 0) 75%`
-- `#000000 100%` */
-
   .shadow-bg {
     width: 100%;
     height: 25vh;
