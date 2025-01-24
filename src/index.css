@@ -103,7 +103,13 @@
     width: 100%;
   }
 
-  .container {
+  .slideshow-banner > .container {
+    position: relative;
+    padding: 0 26px 0;
+    max-width: 100%;
+  }
+
+  .slideshow-banner__slide .container {
     position: relative;
     padding: 50px 26px 0;
   }

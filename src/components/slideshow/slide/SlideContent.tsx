@@ -5,9 +5,7 @@ function SlideContent(props: SlideProps) {
   return (
     <div className="slideshow-banner__wrapper">
       <div className="content">
-        <p className="text-left uppercase more-from sm:w-20 md:w-60">
-          {subtitle}
-        </p>
+        <p className="text-left uppercase more-from w-32 md:w-60">{subtitle}</p>
         <a href={url} target="_blank">
           <button
             type="button"
