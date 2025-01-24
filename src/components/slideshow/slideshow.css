@@ -184,8 +184,8 @@ button.cta {
   .cutout {
     top: 0;
     max-width: 40%;
-    width: 630px;
     transition: opacity 0.3s ease-in-out;
+    max-height: 100%;
   }
 
   .slideshow-banner__thumbnails {
