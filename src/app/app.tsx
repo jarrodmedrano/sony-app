@@ -2,7 +2,7 @@ function App() {
   return (
     <main>
       <div className="flex items-center justify-center min-h-screen">
-        <div className="main-thing md:w-full">
+        <div className="wrapper-main md:w-full">
           <div className="slideshow">
             <div className="shadow-bg">
               <div className="shadow-div"></div>
@@ -14,7 +14,7 @@ function App() {
               />
             </div>
             <div className="container">
-              <div className="main-content">
+              <div className="wrapper-content">
                 <div className="content">
                   <p className="text-left uppercase more-from sm:w-20 md:w-60">
                     More from Rico the Dog

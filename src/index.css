@@ -13,7 +13,7 @@
     color: rgba(255, 255, 255, 1);
   }
 
-  .main-thing {
+  .wrapper-main {
     background: black;
     margin-top: 50px;
   }
@@ -132,7 +132,7 @@
   }
 
   @media (min-width: 640px) {
-    .main-thing {
+    .wrapper-main {
       width: 100%;
       height: 100%;
     }
