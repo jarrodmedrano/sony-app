@@ -100,7 +100,7 @@ button.cta {
   width: 100%;
 }
 
-@media (min-width: 360px) {
+@media (min-width: 360px) and (orientation: landscape) {
   .slideshow-banner__gradient-wrap,
   .slideshow-banner__gradient,
   .slideshow-banner__bgwrap {
@@ -189,7 +189,7 @@ button.cta {
   }
 
   .slideshow-banner__thumbnails {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 
   .slideshow-banner__thumbnails .grid {
