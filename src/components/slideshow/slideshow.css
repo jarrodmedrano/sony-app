@@ -89,7 +89,7 @@ button.cta {
 
 .slideshow-banner__gradient-wrap .slideshow-banner__bgimage {
   transition: background-image 0.5s ease-in-out;
-  background-position: -50px center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
