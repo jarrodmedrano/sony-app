@@ -28,7 +28,7 @@ function Slideshow() {
     <div className="slideshow-banner">
       <Slide slide={slide} />
       {preloadSlide ? (
-        <link rel="preload" href={preloadSlide} as="image" />
+        <link rel="prefetch" href={preloadSlide} as="image" />
       ) : null}
       <div className="container">
         <div className="slideshow-banner__thumbnails">
