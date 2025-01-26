@@ -24,7 +24,7 @@ function Thumbnails({
       }
     >
       <button onClick={handleClick} aria-label="thumbnail">
-        <img src={src} className="rounded" alt={alt} />
+        <img src={src} className="rounded" alt={alt} width="90" height="90" />
       </button>
     </li>
   );

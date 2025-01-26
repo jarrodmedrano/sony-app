@@ -35,6 +35,7 @@
 
   .slideshow-banner__thumbnails img {
     height: 95px;
+    width: auto;
   }
 
   .slideshow-banner__thumbnails--active {
