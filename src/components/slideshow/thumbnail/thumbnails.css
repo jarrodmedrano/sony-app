@@ -23,6 +23,11 @@
   transition: height 0.3s ease-in-out;
 }
 
+.slideshow-banner__thumbnails img {
+  height: auto;
+  width: auto;
+}
+
 @media (min-width: 768px) {
   .slideshow-banner__thumbnails .slideshow-banner__thumbnails--active {
     height: 144px;
