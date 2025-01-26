@@ -8,7 +8,7 @@
     "cta": "Learn More",
     "url": "https://playstation.com",
     "bg": "./assets/1-background.webp",
-    "popout": "./assets/1-foreground-cutout.webp",
+    "popout": "1-foreground-cutout_up7z0p",
     "popoutAlt": "ricobot",
     "thumbnail": "./assets/1-thumbnail.webp"
   },

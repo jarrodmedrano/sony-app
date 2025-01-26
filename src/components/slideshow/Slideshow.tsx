@@ -16,12 +16,12 @@ function Slideshow() {
   };
 
   useEffect(() => {
-    setSlide(slides[activeId]);
-    setPreloadSlide(slides[(activeId + 1) % slides.length].bg);
-    const interval = setInterval(() => {
-      setActiveId((activeId + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    // setSlide(slides[activeId]);
+    // setPreloadSlide(slides[(activeId + 1) % slides.length].bg);
+    // const interval = setInterval(() => {
+    //   setActiveId((activeId + 1) % slides.length);
+    // }, 5000);
+    // return () => clearInterval(interval);
   }, [activeId]);
 
   return (

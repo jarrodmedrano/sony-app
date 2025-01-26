@@ -1,3 +1,11 @@
+import {
+  AdvancedImage,
+  responsive,
+  placeholder,
+  lazyload,
+} from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+
 function SlideImage({
   bg,
   popout,
@@ -7,6 +15,13 @@ function SlideImage({
   popout?: string;
   popoutAlt?: string;
 }) {
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "slashclick",
+    },
+  });
+  const myImage = cld.image(popout).format("webp");
+
   return (
     <div className="slideshow-banner__gradient-wrap">
       <div className="slideshow-banner__gradient"></div>
@@ -16,7 +31,19 @@ function SlideImage({
           style={{ backgroundImage: `url(${bg})` }}
         ></div>
       </div>
-      {popout ? <img className="cutout" src={popout} alt={popoutAlt} /> : null}
+      {popout ? (
+        <AdvancedImage
+          className="cutout"
+          src={popout}
+          alt={popoutAlt}
+          cldImg={myImage}
+          plugins={[
+            responsive({ steps: [360, 768, 1200] }),
+            placeholder(),
+            lazyload(),
+          ]}
+        />
+      ) : null}
     </div>
   );
 }
