@@ -1,3 +1,8 @@
+.slideshow-banner__thumbnails {
+  z-index: 1;
+  position: relative;
+}
+
 .slideshow-banner__thumbnails--active button:before {
   background: linear-gradient(-130deg, #fff, #000 40%, #fff) border-box;
   border-radius: 10px;
@@ -28,7 +33,19 @@
   width: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape) {
+  .slideshow-banner__thumbnails {
+    margin-top: 60px;
+  }
+
+  .slideshow-banner__thumbnails .grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
   .slideshow-banner__thumbnails .slideshow-banner__thumbnails--active {
     height: 144px;
     transform: translateY(-33px);
@@ -59,5 +76,9 @@
     top: 0;
     right: 0;
     bottom: 0;
+  }
+
+  .slideshow-banner__thumbnails .grid {
+    column-gap: 36px;
   }
 }
