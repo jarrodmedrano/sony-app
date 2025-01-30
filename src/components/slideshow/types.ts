@@ -1,13 +1,14 @@
 export interface SlideProps {
-  id: string;
-  url: string;
-  title: string;
-  description: string;
-  cta: string;
-  subtitle: string;
-  button: string;
-  bg: string;
   thumbnail: string;
-  popout?: string;
-  popoutAlt?: string;
+  thumbnailAlt: string;
+  background: string;
+  backgroundAlt: string;
+  cutout?: string;
+  cutoutAlt?: string;
+  headline: string;
+  title: string;
+  overline: string;
+  paragraph: string;
+  button: string;
+  buttonLink: string;
 }

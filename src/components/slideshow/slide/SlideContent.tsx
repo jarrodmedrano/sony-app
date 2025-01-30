@@ -2,7 +2,7 @@ import { SlideProps } from "../types";
 import { motion } from "motion/react";
 
 function SlideContent(props: SlideProps) {
-  const { button, cta, description, subtitle, title, url } = props;
+  const { overline, button, paragraph, headline, title, buttonLink } = props;
 
   return (
     <div className="slideshow-banner__wrapper">
@@ -14,15 +14,15 @@ function SlideContent(props: SlideProps) {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="slideshow-banner__content"
       >
-        <p className="text-left uppercase slideshow-banner__subtitle w-32 md:w-60">
-          {subtitle}
+        <p className="text-left uppercase slideshow-banner__headline w-32 md:w-60">
+          {headline}
         </p>
-        <a href={url} target="_blank">
+        <a href={buttonLink} target="_blank">
           <button
             type="button"
             className="border border-white text-white py-1 rounded-full uppercase rounded-accent"
           >
-            {button}
+            {overline}
           </button>
         </a>
         <h1 className="font-bolder text-white text-3xl mb-8 uppercase slideshow-banner__main-title">
@@ -30,11 +30,11 @@ function SlideContent(props: SlideProps) {
         </h1>
 
         <p className="slideshow-banner__paragraph font-semibold sm:w-3/4">
-          {description}
+          {paragraph}
         </p>
-        <a href={url} target="_blank">
+        <a href={buttonLink} target="_blank">
           <button className="bg-white text-black px-5 py-3 md:py-4 rounded-full font-bolder hover:bg-gray-100 uppercase cta">
-            {cta}
+            {button}
           </button>
         </a>
       </motion.div>

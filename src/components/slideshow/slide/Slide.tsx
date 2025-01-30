@@ -11,7 +11,7 @@ function Slide({
   handleMouseEnter: () => void;
   handleMouseLeave: () => void;
 }) {
-  const { bg, popout, popoutAlt, title } = slide;
+  const { background, cutout, cutoutAlt, title, backgroundAlt } = slide;
   return (
     <div
       className="slideshow-banner__slide"
@@ -19,7 +19,13 @@ function Slide({
       aria-label={title}
       role="group"
     >
-      <SlideImage alt={title} bg={bg} popout={popout} popoutAlt={popoutAlt} />
+      <SlideImage
+        alt={title}
+        bgAlt={backgroundAlt}
+        bg={background}
+        cutout={cutout}
+        cutoutAlt={cutoutAlt}
+      />
       <div
         className="container"
         onMouseEnter={handleMouseEnter}
