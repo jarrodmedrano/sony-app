@@ -1,14 +1,15 @@
 import { AnimatePresence, motion } from "motion/react";
 function SlideImage({
   bg,
-  popout,
-  popoutAlt,
-  alt,
+  cutout,
+  cutoutAlt,
+  bgAlt,
 }: {
   bg: string;
-  popout?: string;
-  popoutAlt?: string;
+  cutout?: string;
+  cutoutAlt?: string;
   alt: string;
+  bgAlt: string;
 }) {
   return (
     <div className="slideshow-banner__gradient-wrap">
@@ -29,7 +30,7 @@ function SlideImage({
               <img
                 itemProp="image"
                 src={bg}
-                alt={alt}
+                alt={bgAlt}
                 width="1168"
                 height="780"
               />
@@ -37,16 +38,16 @@ function SlideImage({
           </motion.div>
         </div>
       </div>
-      {popout ? (
+      {cutout ? (
         <AnimatePresence mode="wait">
           <motion.img
-            key={popout}
+            key={cutout}
             initial={{ top: 100 }}
             animate={{ top: 0 }}
             transition={{ duration: 2, top: 100, ease: "easeInOut" }}
             className="cutout"
-            src={popout}
-            alt={popoutAlt}
+            src={cutout}
+            alt={cutoutAlt}
           />
         </AnimatePresence>
       ) : null}

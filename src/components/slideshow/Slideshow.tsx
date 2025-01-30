@@ -1,6 +1,6 @@
 import Slide from "./slide/Slide";
 import Thumbnails from "./thumbnail/Thumbnails";
-import slides from "./__mock__/slides.json";
+import slideshowData from "./__mock__/slides.json";
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./slideshow.css";
 import { SlideProps } from "./types";
@@ -21,7 +21,9 @@ function Slideshow() {
 
   const startSlideshow = useCallback(() => {
     intervalRef.current = setInterval(() => {
-      setActiveId((prevActiveId) => (prevActiveId + 1) % slides.length);
+      setActiveId(
+        (prevActiveId) => (prevActiveId + 1) % slideshowData?.slides.length
+      );
     }, 5000);
   }, []);
 
@@ -31,8 +33,10 @@ function Slideshow() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeId]);
 
-  const slide = slides[activeId];
-  const preloadSlide = slides[(activeId + 1) % slides.length].bg;
+  const slide = slideshowData?.slides[activeId];
+  const preloadSlide =
+    slideshowData?.slides[(activeId + 1) % slideshowData?.slides.length]
+      .background;
 
   return (
     <div className="slideshow-banner">
@@ -47,11 +51,11 @@ function Slideshow() {
       <div className="container">
         <div className="slideshow-banner__thumbnails">
           <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
-            {slides?.map((slide: SlideProps, index) => {
-              const { id, thumbnail, title } = slide;
+            {slideshowData?.slides?.map((slide: SlideProps, index) => {
+              const { thumbnail, title } = slide;
               return (
                 <Thumbnails
-                  key={id}
+                  key={title}
                   handleThumbClick={updateSlide}
                   src={thumbnail}
                   index={index}

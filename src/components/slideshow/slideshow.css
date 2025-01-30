@@ -10,7 +10,7 @@
   width: auto;
 }
 
-.slideshow-banner__subtitle {
+.slideshow-banner__headline {
   font-size: 17px;
   font-weight: 900;
   max-width: 50%;
@@ -173,7 +173,7 @@ button.cta {
     padding: 90px 80px 0;
   }
 
-  .slideshow-banner__subtitle {
+  .slideshow-banner__headline {
     font-size: 31px;
     font-weight: 900;
     margin-bottom: 75px;
