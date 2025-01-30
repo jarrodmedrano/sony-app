@@ -2,7 +2,15 @@ import { SlideProps } from "../types";
 import SlideContent from "./SlideContent";
 import SlideImage from "./SlideImage";
 
-function Slide({ slide }: { slide: SlideProps }) {
+function Slide({
+  slide,
+  handleMouseEnter,
+  handleMouseLeave,
+}: {
+  slide: SlideProps;
+  handleMouseEnter: () => void;
+  handleMouseLeave: () => void;
+}) {
   const { bg, popout, popoutAlt, title } = slide;
   return (
     <div
@@ -12,7 +20,11 @@ function Slide({ slide }: { slide: SlideProps }) {
       role="group"
     >
       <SlideImage alt={title} bg={bg} popout={popout} popoutAlt={popoutAlt} />
-      <div className="container">
+      <div
+        className="container"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <SlideContent {...slide} />
       </div>
     </div>
