@@ -8,9 +8,9 @@ export function useMaxSlideHeight(
   useEffect(() => {
     const updateHeight = () => {
       const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-      const isWideScreen = window.matchMedia("(min-width: 900px)").matches;
+      // const isWideScreen = window.matchMedia("(min-width: 900px)").matches;
 
-      if (isLandscape && isWideScreen && slidesRef.current.length) {
+      if (isLandscape && slidesRef.current.length) {
         const heights = slidesRef.current.map(
           (slide) => slide?.offsetHeight || 0
         );

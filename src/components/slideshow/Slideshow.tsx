@@ -65,6 +65,7 @@ function Slideshow() {
               position: "absolute",
               visibility: "hidden",
             }}
+            hideImage={true}
           />
         );
       })}

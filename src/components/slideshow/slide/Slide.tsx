@@ -9,10 +9,11 @@ const Slide = forwardRef<
     slide: SlideProps;
     handleMouseEnter?: () => void;
     handleMouseLeave?: () => void;
+    hideImage?: boolean;
   } & React.HTMLAttributes<HTMLDivElement>
 >(({ slide, ...props }, ref) => {
   const { background, cutout, cutoutAlt, title, backgroundAlt } = slide;
-  const { handleMouseEnter, handleMouseLeave, style } = props;
+  const { handleMouseEnter, handleMouseLeave, style, hideImage } = props;
   return (
     <div
       className="slideshow-banner__slide"
@@ -27,9 +28,9 @@ const Slide = forwardRef<
       <SlideImage
         alt={title}
         bgAlt={backgroundAlt}
-        bg={background}
+        bg={!hideImage ? background : undefined}
         cutout={cutout}
-        cutoutAlt={cutoutAlt}
+        cutoutAlt={!hideImage ? cutoutAlt : undefined}
       />
       <div className="container">
         <SlideContent {...slide} />
