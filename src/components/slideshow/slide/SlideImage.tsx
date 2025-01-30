@@ -26,7 +26,13 @@ function SlideImage({
               itemType="http://schema.org/ImageObject"
               className="slideshow-banner__figure"
             >
-              <img itemProp="image" src={bg} alt={alt} />
+              <img
+                itemProp="image"
+                src={bg}
+                alt={alt}
+                width="1168"
+                height="780"
+              />
             </figure>
           </motion.div>
         </div>
