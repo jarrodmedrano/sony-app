@@ -33,7 +33,7 @@ function Slideshow() {
         <div className="slideshow-banner__thumbnails">
           <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
             {slides?.map((slide: SlideProps, index) => {
-              const { id, thumbnail } = slide;
+              const { id, thumbnail, title } = slide;
               return (
                 <Thumbnails
                   key={id}
@@ -41,6 +41,7 @@ function Slideshow() {
                   src={thumbnail}
                   index={index}
                   activeId={activeId}
+                  alt={title}
                 />
               );
             })}
