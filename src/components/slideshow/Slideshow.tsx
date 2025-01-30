@@ -4,13 +4,17 @@ import slideshowData from "./__mock__/slides.json";
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./slideshow.css";
 import { SlideProps } from "./types";
+import { useMaxSlideHeight } from "./hooks/useMaxSlideHeight";
 
 function Slideshow() {
   const [activeId, setActiveId] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const slidesRef = useRef<(HTMLDivElement | null)[]>([]);
+  const maxHeight = useMaxSlideHeight(slidesRef);
 
   const updateSlide = useCallback((id: number) => {
     setActiveId(id);
+    stopSlideshow();
   }, []);
 
   const stopSlideshow = useCallback(() => {
@@ -39,12 +43,31 @@ function Slideshow() {
       .background;
 
   return (
-    <div className="slideshow-banner">
-      <Slide
-        slide={slide}
-        handleMouseEnter={stopSlideshow}
-        handleMouseLeave={startSlideshow}
-      />
+    <div
+      className="slideshow-banner"
+      style={{
+        minHeight: maxHeight || "auto",
+      }}
+    >
+      <Slide slide={slide} style={{ height: maxHeight || "auto" }} />
+      {slideshowData?.slides?.map((slide: SlideProps, index) => {
+        const { title } = slide;
+        return (
+          <Slide
+            ref={(el) => (slidesRef.current[index] = el)}
+            key={title}
+            slide={slide}
+            style={{
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: maxHeight || "auto",
+              position: "absolute",
+              visibility: "hidden",
+            }}
+          />
+        );
+      })}
       {preloadSlide ? (
         <link rel="prefetch" href={preloadSlide} as="image" />
       ) : null}
