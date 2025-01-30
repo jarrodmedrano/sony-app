@@ -22,11 +22,15 @@ function SlideImage({
             animate={{ top: 0, opacity: 1 }}
             transition={{ duration: 1, top: 100, ease: "easeInOut" }}
           >
-            <img src={bg} alt={alt} />
+            <figure
+              itemType="http://schema.org/ImageObject"
+              className="slideshow-banner__figure"
+            >
+              <img itemProp="image" src={bg} alt={alt} />
+            </figure>
           </motion.div>
         </div>
       </div>
-
       {popout ? (
         <AnimatePresence mode="wait">
           <motion.img
