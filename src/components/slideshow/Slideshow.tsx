@@ -16,10 +16,10 @@ function Slideshow() {
 
   useEffect(() => {
     setSlide(slides[activeId]);
-    const interval = setInterval(() => {
-      setActiveId((activeId + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    // const interval = setInterval(() => {
+    //   setActiveId((activeId + 1) % slides.length);
+    // }, 5000);
+    // return () => clearInterval(interval);
   }, [activeId]);
 
   return (

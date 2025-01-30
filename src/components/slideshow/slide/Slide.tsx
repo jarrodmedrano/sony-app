@@ -11,7 +11,7 @@ function Slide({ slide }: { slide: SlideProps }) {
       aria-label={title}
       role="group"
     >
-      <SlideImage bg={bg} popout={popout} popoutAlt={popoutAlt} />
+      <SlideImage alt={title} bg={bg} popout={popout} popoutAlt={popoutAlt} />
       <div className="container">
         <SlideContent {...slide} />
       </div>
