@@ -19,11 +19,12 @@ function SlideImage({
       </div>
 
       {popout ? (
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           <motion.img
-            initial={{ opacity: 0, top: 100 }}
-            animate={{ opacity: 1, top: 0 }}
-            transition={{ duration: 2, top: 100 }}
+            key={popout}
+            initial={{ top: 100 }}
+            animate={{ top: 0 }}
+            transition={{ duration: 2, top: 100, ease: "easeInOut" }}
             className="cutout"
             src={popout}
             alt={popoutAlt}

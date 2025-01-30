@@ -1,10 +1,19 @@
 import { SlideProps } from "../types";
+import { motion } from "motion/react";
 
 function SlideContent(props: SlideProps) {
   const { button, cta, description, subtitle, title, url } = props;
+
   return (
     <div className="slideshow-banner__wrapper">
-      <div className="slideshow-banner__content">
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, top: 50 }}
+        animate={{ opacity: 1, top: 0 }}
+        exit={{ opacity: 0, top: -50 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="slideshow-banner__content"
+      >
         <p className="text-left uppercase slideshow-banner__subtitle w-32 md:w-60">
           {subtitle}
         </p>
@@ -28,7 +37,7 @@ function SlideContent(props: SlideProps) {
             {cta}
           </button>
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 }
