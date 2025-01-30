@@ -8,7 +8,6 @@ import { SlideProps } from "./types";
 function Slideshow() {
   const [activeId, setActiveId] = useState(0);
   const [slide, setSlide] = useState<SlideProps>(slides[0]);
-  const [preloadSlide, setPreloadSlide] = useState<string>();
 
   const handleClick = (id: number) => {
     setSlide(slides[id]);
@@ -17,7 +16,6 @@ function Slideshow() {
 
   useEffect(() => {
     setSlide(slides[activeId]);
-    setPreloadSlide(slides[(activeId + 1) % slides.length].bg);
     const interval = setInterval(() => {
       setActiveId((activeId + 1) % slides.length);
     }, 5000);
@@ -27,9 +25,10 @@ function Slideshow() {
   return (
     <div className="slideshow-banner">
       <Slide slide={slide} />
-      {preloadSlide ? (
-        <link rel="prefetch" href={preloadSlide} as="image" />
-      ) : null}
+      {slides.map((slide: SlideProps, index) => {
+        const { bg } = slide;
+        return <link key={index} rel="prefetch" href={bg} as="image" />;
+      })}
       <div className="container">
         <div className="slideshow-banner__thumbnails">
           <ul className="grid grid-cols-3 gap-x-3 gap-y-2">

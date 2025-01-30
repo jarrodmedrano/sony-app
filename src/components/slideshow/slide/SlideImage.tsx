@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "motion/react";
 function SlideImage({
   bg,
   popout,
@@ -16,7 +17,20 @@ function SlideImage({
           style={{ backgroundImage: `url(${bg})` }}
         ></div>
       </div>
-      {popout ? <img className="cutout" src={popout} alt={popoutAlt} /> : null}
+
+      {popout ? (
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={popout}
+            initial={{ top: 100 }}
+            animate={{ top: 0 }}
+            transition={{ duration: 2, top: 100, ease: "easeInOut" }}
+            className="cutout"
+            src={popout}
+            alt={popoutAlt}
+          />
+        </AnimatePresence>
+      ) : null}
     </div>
   );
 }
