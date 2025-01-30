@@ -183,7 +183,6 @@ button.cta {
   .cutout {
     top: 0;
     max-width: 40%;
-    transition: opacity 0.3s ease-in-out;
     max-height: 100%;
   }
 
