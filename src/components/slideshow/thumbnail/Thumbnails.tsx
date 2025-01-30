@@ -5,11 +5,13 @@ function Thumbnails({
   index,
   src,
   activeId,
+  alt,
 }: {
   handleThumbClick: (index: number) => void;
   index: number;
   src: string;
   activeId: number;
+  alt: string;
 }) {
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -21,8 +23,8 @@ function Thumbnails({
         activeId === index ? "slideshow-banner__thumbnails--active" : ""
       }
     >
-      <button className="" onClick={handleClick}>
-        <img src={src} className="rounded" />
+      <button onClick={handleClick} aria-label="thumbnail">
+        <img src={src} className="rounded" alt={alt} width="90" height="90" />
       </button>
     </li>
   );
