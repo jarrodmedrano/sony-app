@@ -8,7 +8,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <main>
         <div className="flex items-center justify-center min-h-screen">
-          <div className="wrapper-main w-full h-full">
+          <div className="wrapper-main md:w-full">
             <Slideshow />
           </div>
         </div>
