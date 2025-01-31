@@ -2,6 +2,7 @@
   position: relative;
   overflow: visible;
   padding-bottom: 90px;
+  background: black;
 }
 
 .slideshow-banner__content {
