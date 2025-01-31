@@ -66,58 +66,60 @@ function Slideshow() {
       aria-roledescription="carousel"
       aria-label="Highlighted features"
     >
-      {slide ? (
-        <Slide
-          slide={slide}
-          style={{ height: maxHeight || "auto" }}
-          slideLength={slideData?.length}
-          activeId={activeId}
-          title={slideData?.[activeId]?.title}
-        />
-      ) : null}
-      {slideData?.map((slide: SlideData, index: number) => {
-        const { title } = slide;
-        return (
+      <>
+        {slide ? (
           <Slide
-            ref={(el) => (slidesRef.current[index] = el)}
-            key={title}
-            slide={slideData?.[index]}
-            style={{
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: maxHeight || "auto",
-              position: "absolute",
-              visibility: "hidden",
-            }}
-            slideLength={slideData.length}
-            activeId={index}
-            isHidden={true}
+            slide={slide}
+            style={{ height: maxHeight || "auto" }}
+            slideLength={slideData?.length}
+            activeId={activeId}
+            title={slideData?.[activeId]?.title}
           />
-        );
-      })}
-      {preloadSlide ? (
-        <link rel="prefetch" href={preloadSlide} as="image" />
-      ) : null}
-      <div className="container">
-        <div className="slideshow-banner__thumbnails">
-          <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
-            {slideData?.map((slide: SlideData, index: number) => {
-              const { thumbnail, title } = slide;
-              return (
-                <Thumbnails
-                  key={title}
-                  handleThumbClick={updateSlide}
-                  src={thumbnail}
-                  index={index}
-                  activeId={activeId}
-                  alt={title}
-                />
-              );
-            })}
-          </ul>
+        ) : null}
+        {slideData?.map((slide: SlideData, index: number) => {
+          const { title } = slide;
+          return (
+            <Slide
+              ref={(el) => (slidesRef.current[index] = el)}
+              key={title}
+              slide={slideData?.[index]}
+              style={{
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: maxHeight || "auto",
+                position: "absolute",
+                visibility: "hidden",
+              }}
+              slideLength={slideData.length}
+              activeId={index}
+              isHidden={true}
+            />
+          );
+        })}
+        {preloadSlide ? (
+          <link rel="prefetch" href={preloadSlide} as="image" />
+        ) : null}
+        <div className="container">
+          <div className="slideshow-banner__thumbnails">
+            <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
+              {slideData?.map((slide: SlideData, index: number) => {
+                const { thumbnail, title } = slide;
+                return (
+                  <Thumbnails
+                    key={title}
+                    handleThumbClick={updateSlide}
+                    src={thumbnail}
+                    index={index}
+                    activeId={activeId}
+                    alt={title}
+                  />
+                );
+              })}
+            </ul>
+          </div>
         </div>
-      </div>
+      </>
     </div>
   );
 }
