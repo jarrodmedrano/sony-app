@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { SlideData } from "../types";
 
 export function useMaxSlideHeight(
-  slidesRef: React.MutableRefObject<(HTMLDivElement | null)[]>
+  slidesRef: React.MutableRefObject<(HTMLDivElement | null)[]>,
+  slideData: SlideData[]
 ) {
   const [maxHeight, setMaxHeight] = useState<number | null>(null);
 
   useEffect(() => {
     const updateHeight = () => {
       const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-      // const isWideScreen = window.matchMedia("(min-width: 900px)").matches;
 
       if (isLandscape && slidesRef.current.length) {
         const heights = slidesRef.current.map(
@@ -27,7 +28,7 @@ export function useMaxSlideHeight(
     return () => {
       window.removeEventListener("resize", updateHeight);
     };
-  }, [slidesRef]);
+  }, [slidesRef, slideData]);
 
   return maxHeight;
 }

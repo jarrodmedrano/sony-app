@@ -1,3 +1,4 @@
+import { ThumbnailsProps } from "../types";
 import "./thumbnails.css";
 
 function Thumbnails({
@@ -6,13 +7,7 @@ function Thumbnails({
   src,
   activeId,
   alt,
-}: {
-  handleThumbClick: (index: number) => void;
-  index: number;
-  src: string;
-  activeId: number;
-  alt: string;
-}) {
+}: ThumbnailsProps) {
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();
     handleThumbClick(index);
