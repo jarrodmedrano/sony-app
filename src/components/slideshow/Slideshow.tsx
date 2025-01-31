@@ -48,8 +48,15 @@ function Slideshow() {
       style={{
         minHeight: maxHeight || "auto",
       }}
+      aria-roledescription="carousel"
+      aria-label="Highlighted features"
     >
-      <Slide slide={slide} style={{ height: maxHeight || "auto" }} />
+      <Slide
+        slide={slide}
+        style={{ height: maxHeight || "auto" }}
+        slideLength={slideshowData?.slides?.length}
+        activeId={activeId}
+      />
       {slideshowData?.slides?.map((slide: SlideProps, index) => {
         const { title } = slide;
         return (
@@ -65,7 +72,9 @@ function Slideshow() {
               position: "absolute",
               visibility: "hidden",
             }}
-            hideImage={true}
+            slideLength={slideshowData?.slides?.length}
+            activeId={index}
+            isHidden={true}
           />
         );
       })}
