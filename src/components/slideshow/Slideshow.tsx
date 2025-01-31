@@ -1,20 +1,22 @@
 import Slide from "./slide/Slide";
 import Thumbnails from "./thumbnail/Thumbnails";
-import slideshowData from "./__mock__/slides.json";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./slideshow.css";
-import { SlideProps } from "./types";
+import { SlideData } from "./types";
 import { useMaxSlideHeight } from "./hooks/useMaxSlideHeight";
+import { useGetSlides } from "../../api/getSlides";
 
 function Slideshow() {
+  const { data: slideshowData, isLoading } = useGetSlides();
   const [activeId, setActiveId] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const slidesRef = useRef<(HTMLDivElement | null)[]>([]);
-  const maxHeight = useMaxSlideHeight(slidesRef);
+  const [slide, setSlide] = useState<SlideData | null>(null);
 
   const updateSlide = useCallback((id: number) => {
     setActiveId(id);
     stopSlideshow();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const stopSlideshow = useCallback(() => {
@@ -23,26 +25,39 @@ function Slideshow() {
     }
   }, []);
 
-  const startSlideshow = useCallback(() => {
-    intervalRef.current = setInterval(() => {
-      setActiveId(
-        (prevActiveId) => (prevActiveId + 1) % slideshowData?.slides.length
-      );
-    }, 5000);
-  }, []);
+  const slideData = slideshowData?.slides;
 
   useEffect(() => {
-    startSlideshow();
+    if (slideData && slideData.length > 0) {
+      startSlideshow();
+    }
     return stopSlideshow;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeId]);
+  }, [activeId, slideData]);
 
-  const slide = slideshowData?.slides[activeId];
-  const preloadSlide =
-    slideshowData?.slides[(activeId + 1) % slideshowData?.slides.length]
-      .background;
+  useEffect(() => {
+    setSlide(slideData?.[activeId]);
+  }, [slideData, activeId]);
 
-  return (
+  const startSlideshow = useCallback(() => {
+    if (slideData) {
+      intervalRef.current = setInterval(() => {
+        setActiveId((prevActiveId) => (prevActiveId + 1) % slideData?.length);
+      }, 5000);
+    }
+  }, [slideData]);
+
+  const maxHeight = useMaxSlideHeight(slidesRef, slideData);
+
+  const preloadSlide = useMemo(() => {
+    return slideData?.[(activeId + 1) % slideData?.length]?.background;
+  }, [slideData, activeId]);
+
+  return isLoading ? (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+    </div>
+  ) : (
     <div
       className="slideshow-banner"
       style={{
@@ -51,19 +66,22 @@ function Slideshow() {
       aria-roledescription="carousel"
       aria-label="Highlighted features"
     >
-      <Slide
-        slide={slide}
-        style={{ height: maxHeight || "auto" }}
-        slideLength={slideshowData?.slides?.length}
-        activeId={activeId}
-      />
-      {slideshowData?.slides?.map((slide: SlideProps, index) => {
+      {slide ? (
+        <Slide
+          slide={slide}
+          style={{ height: maxHeight || "auto" }}
+          slideLength={slideData?.length}
+          activeId={activeId}
+          title={slideData?.[activeId]?.title}
+        />
+      ) : null}
+      {slideData?.map((slide: SlideData, index: number) => {
         const { title } = slide;
         return (
           <Slide
             ref={(el) => (slidesRef.current[index] = el)}
             key={title}
-            slide={slide}
+            slide={slideData?.[index]}
             style={{
               top: 0,
               left: 0,
@@ -72,7 +90,7 @@ function Slideshow() {
               position: "absolute",
               visibility: "hidden",
             }}
-            slideLength={slideshowData?.slides?.length}
+            slideLength={slideData.length}
             activeId={index}
             isHidden={true}
           />
@@ -84,7 +102,7 @@ function Slideshow() {
       <div className="container">
         <div className="slideshow-banner__thumbnails">
           <ul className="grid grid-cols-3 gap-x-3 gap-y-2">
-            {slideshowData?.slides?.map((slide: SlideProps, index) => {
+            {slideData?.map((slide: SlideData, index: number) => {
               const { thumbnail, title } = slide;
               return (
                 <Thumbnails
