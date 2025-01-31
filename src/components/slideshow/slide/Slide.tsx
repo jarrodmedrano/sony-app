@@ -9,28 +9,32 @@ const Slide = forwardRef<
     slide: SlideProps;
     handleMouseEnter?: () => void;
     handleMouseLeave?: () => void;
-    hideImage?: boolean;
+    slideLength: number;
+    activeId: number;
+    isHidden?: boolean;
   } & React.HTMLAttributes<HTMLDivElement>
->(({ slide, ...props }, ref) => {
+>(({ slide, slideLength, activeId, ...props }, ref) => {
   const { background, cutout, cutoutAlt, title, backgroundAlt } = slide;
-  const { handleMouseEnter, handleMouseLeave, style, hideImage } = props;
+  const { handleMouseEnter, handleMouseLeave, style, isHidden } = props;
   return (
     <div
       className="slideshow-banner__slide"
       aria-roledescription="slide"
-      aria-label={title}
+      aria-label={`${activeId + 1} of ${slideLength}`}
       role="group"
       style={style}
       ref={ref}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      aria-hidden={isHidden}
     >
       <SlideImage
         alt={title}
         bgAlt={backgroundAlt}
-        bg={!hideImage ? background : undefined}
         cutout={cutout}
-        cutoutAlt={!hideImage ? cutoutAlt : undefined}
+        isHidden={isHidden}
+        background={background}
+        cutoutAlt={cutoutAlt}
       />
       <div className="container">
         <SlideContent {...slide} />

@@ -140,7 +140,7 @@ button.cta {
   padding: 50px 26px 0;
 }
 
-.cutout {
+.slideshow-banner__cutout {
   position: absolute;
   top: 0;
   left: 50%;
@@ -197,7 +197,7 @@ button.cta {
     letter-spacing: 0;
   }
 
-  .cutout {
+  .slideshow-banner__cutout {
     top: 0;
     max-width: 40%;
     max-height: 100%;
