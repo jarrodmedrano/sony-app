@@ -1,19 +1,13 @@
 import { AnimatePresence, motion } from "motion/react";
+import { SlideImageProps } from "../types";
+
 function SlideImage({
   background,
   cutout,
   cutoutAlt,
   bgAlt,
   isHidden,
-}: {
-  bg?: string;
-  cutout?: string;
-  cutoutAlt?: string;
-  alt: string;
-  bgAlt: string;
-  isHidden?: boolean;
-  background: string;
-}) {
+}: SlideImageProps) {
   return (
     <div className="slideshow-banner__gradient-wrap">
       <div className="slideshow-banner__gradient"></div>

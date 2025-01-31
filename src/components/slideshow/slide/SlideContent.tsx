@@ -1,8 +1,8 @@
-import { SlideProps } from "../types";
+import { SlideData } from "../types";
 import { motion } from "motion/react";
 
-function SlideContent(props: SlideProps) {
-  const { overline, button, paragraph, headline, title, buttonLink } = props;
+function SlideContent({ slide }: { slide: SlideData }) {
+  const { overline, button, paragraph, headline, title, buttonLink } = slide;
 
   return (
     <div className="slideshow-banner__wrapper">
