@@ -18,4 +18,8 @@
     background: black;
     color: white;
   }
+
+  body {
+    overflow: hidden;
+  }
 }
