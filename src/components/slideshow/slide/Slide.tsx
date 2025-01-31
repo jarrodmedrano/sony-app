@@ -1,46 +1,39 @@
 import { forwardRef } from "react";
-import { SlideProps } from "../types";
 import SlideContent from "./SlideContent";
 import SlideImage from "./SlideImage";
+import { SlideProps } from "../types";
 
-const Slide = forwardRef<
-  HTMLDivElement,
-  {
-    slide: SlideProps;
-    handleMouseEnter?: () => void;
-    handleMouseLeave?: () => void;
-    slideLength: number;
-    activeId: number;
-    isHidden?: boolean;
-  } & React.HTMLAttributes<HTMLDivElement>
->(({ slide, slideLength, activeId, ...props }, ref) => {
-  const { background, cutout, cutoutAlt, title, backgroundAlt } = slide;
-  const { handleMouseEnter, handleMouseLeave, style, isHidden } = props;
-  return (
-    <div
-      className="slideshow-banner__slide"
-      aria-roledescription="slide"
-      aria-label={`${activeId + 1} of ${slideLength}`}
-      role="group"
-      style={style}
-      ref={ref}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      aria-hidden={isHidden}
-    >
-      <SlideImage
-        alt={title}
-        bgAlt={backgroundAlt}
-        cutout={cutout}
-        isHidden={isHidden}
-        background={background}
-        cutoutAlt={cutoutAlt}
-      />
-      <div className="container">
-        <SlideContent {...slide} />
+const Slide = forwardRef<HTMLDivElement, SlideProps>(
+  ({ slide, slideLength, activeId, style, isHidden }, ref) => {
+    const {
+      background = "",
+      cutout = "",
+      cutoutAlt = "",
+      backgroundAlt = "",
+    } = slide;
+    return (
+      <div
+        className="slideshow-banner__slide"
+        aria-roledescription="slide"
+        aria-label={`${activeId + 1} of ${slideLength}`}
+        role="group"
+        style={style}
+        ref={ref}
+        aria-hidden={isHidden}
+      >
+        <SlideImage
+          bgAlt={backgroundAlt}
+          cutout={cutout}
+          isHidden={isHidden}
+          background={background}
+          cutoutAlt={cutoutAlt}
+        />
+        <div className="container">
+          <SlideContent slide={slide} />
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export default Slide;
