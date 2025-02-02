@@ -33,7 +33,7 @@ function Slideshow() {
     }
     return stopSlideshow;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeId, slideData]);
+  }, [slideData]);
 
   useEffect(() => {
     setSlide(slideData?.[activeId]);
